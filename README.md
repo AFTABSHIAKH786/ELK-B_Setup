@@ -63,8 +63,14 @@ KIBANA_PORT=5601
 sudo sysctl -w vm.max_map_count=262144
 ```
 
-### Step 4: Start the Stack
+### Step 4: Set File Permissions for Beats Configs
+```bash
+sudo chown root:root filebeat.yml metricbeat.yml
+sudo chmod 644 filebeat.yml metricbeat.yml
+```bash
 
+
+### Step 6: Start the Stack
 ```bash
 docker-compose up
 ```
